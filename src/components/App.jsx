@@ -41,9 +41,7 @@ export function App() {
   const countPositiveFeedbackPercentage = () => {
     const { good } = options;
     const total = countTotalFeedback();
-    let goodPercent = Math.round((good * 100) / Number(total));
-    if (isNaN(goodPercent)) goodPercent = 0;
-    return goodPercent;
+    return Math.round((good * 100) / Number(total)) || 0;
   };
 
   return (
